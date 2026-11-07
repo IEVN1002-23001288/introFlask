@@ -11,7 +11,7 @@ app = Flask(__name__)
 app.register_blueprint(alumnos_bp)
 app.register_blueprint(maestros_bp)
  
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:4200"}})
  
 con = MySQL(app)
  
